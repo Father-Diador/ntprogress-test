@@ -130,6 +130,25 @@ export default {
 
           this.$emit('create', this.application);
 
+          // WEB SOCKET
+
+          // var socket = new WebSocket("ws://ссылка/ws");
+          // socket.onopen = function() {
+          //   alert("Соединение установлено.");
+          // };
+          // socket.onclose = function(event) {
+          //     if (event.wasClean) {
+          //         alert('Соединение закрыто чисто');
+          //     } else {
+          //         alert('Обрыв соединения');
+          //     }
+          //     alert('Код: ' + event.code + ' причина: ' + event.reason);
+          // };
+          // socket.onerror = function(error) {
+          //     alert("Ошибка " + error.message);
+          // };
+          // socket.send(this.application);
+
           this.valuesCount = 1;
           this.side = '';
           this.application = {
