@@ -57,6 +57,7 @@ export default {
       if(this.confirmDeal == true) {
         let new_aplications = this.findById(this.$store.getters.GET_APPLICATIONS, this.$store.getters.CURRENT_OPERATION.id);
         this.$store.commit('SET_APPLICATIONS', new_aplications);
+        localStorage.setItem('applications', JSON.stringify(new_aplications))
         this.$store.commit('SET_CONFIRMATION', false);
         this.$notify('deal completed', {
           type: 'success',

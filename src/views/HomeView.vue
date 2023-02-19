@@ -34,12 +34,20 @@ export default {
     performOperation(application) {
       this.applications.unshift(application);
       this.$store.commit('SET_APPLICATIONS', this.applications);
-      console.log(this.$store.getters.GET_APPLICATIONS);
+      localStorage.setItem('applications', JSON.stringify(this.applications));
     },
   },
   computed: {
     OperationConfirmation(){
       return this.$store.getters.CONFIRMATION;
+    },
+  },
+  beforeMount() {
+    if (!JSON.parse(localStorage.getItem('applications'))) {
+      localStorage.setItem('applications', JSON.stringify(this.applications));
+    } else {
+      this.applications = JSON.parse(localStorage.getItem('applications'));
+      this.$store.commit('SET_APPLICATIONS', this.applications);
     }
   }
 }
