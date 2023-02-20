@@ -31,7 +31,7 @@
           <span>
             {{ this.valuesBuyPrice }}
           </span>
-          <button class="buy-btn" @click="performOperation(2)">BUY</button>
+          <button class="buy-btn" @click="performOperation(2)" data-testid="send-buy-request-button">BUY</button>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import SelectValue from "@/components/SelectValue";
+import SelectValue from "./SelectValue";
 
 export default {
   data() {
